@@ -70,6 +70,7 @@ jobs:
         with:
           name: KuroToon-test-${{ github.sha }}
           if-no-files-found: error
+          retention-days: 14
           path: |
             app/build/outputs/apk/release/*.apk
 
