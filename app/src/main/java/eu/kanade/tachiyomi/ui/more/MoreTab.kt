@@ -36,8 +36,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import mihon.feature.support.SupportUsScreen
-import tachiyomi.i18n.MR
-import tachiyomi.presentation.core.i18n.stringResource
 
 data object MoreTab : Tab {
 
