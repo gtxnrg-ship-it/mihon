@@ -106,9 +106,9 @@ Use the Java version declared in `.github/.java-version` and the checked-in Grad
 
 The [Build & Test workflow](./.github/workflows/build.yml) runs formatting checks, unit tests, SQLDelight migration verification, and an Android release build. A successful CI run does not replace testing on a physical Android device.
 
-## 📜 Open-source credits
+## 📜 Open-source licensing
 
-KuroToon is an independent project and is not an official release of any upstream project. Portions of the codebase are derived from the **Mihon open-source project**. Applicable upstream copyright and attribution notices and the Apache License 2.0 are retained in this repository; see [LICENSE](./LICENSE). Third-party components may have separate terms. This attribution is included for license compliance and does not imply that KuroToon is the upstream product.
+KuroToon is an independent Android application. This repository includes code and third-party components distributed under open-source licenses. Required copyright notices, license texts, and attribution must remain available in the repository to comply with those licenses; see [LICENSE](./LICENSE). Third-party components may have separate terms. KuroToon has its own product identity and is not presented as another project's official app.
 
 ## 🤝 Contributing
 
