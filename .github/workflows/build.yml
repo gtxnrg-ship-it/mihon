@@ -32,6 +32,8 @@ jobs:
 
       - name: Dependency Review
         if: github.event_name == 'pull_request'
+        # The fork may not have GitHub dependency graph enabled; do not block app validation on that optional service.
+        continue-on-error: true
         uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
 
       - name: Set up JDK
