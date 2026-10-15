@@ -1,114 +1,130 @@
-# KuroToon
+# 🌌 KuroToon
 
-### Your manga universe. Your way. 🌌
+<p align="center">
+  <strong>Your manga universe. Your way.</strong><br/>
+  A cozy cosmic home for your next story. 🐈‍⬛✨
+</p>
 
-KuroToon is an independent Android reader project for manga, manhwa, manhua, webtoons, comics, and other supported reading formats. Its goal is a polished cosmic-themed reading experience with source choice, personal customization, and a clear path for future updates.
+<p align="center">
+  <a href="https://kurotoon-hub.lovable.app/"><strong>🌐 Open the KuroToon Website</strong></a>
+  ·
+  <a href="https://github.com/gtxnrg-ship-it/mihon/releases/latest"><strong>📦 Latest APK Release</strong></a>
+  ·
+  <a href="https://github.com/gtxnrg-ship-it/mihon/actions/workflows/build.yml"><strong>🛠️ Latest Build</strong></a>
+</p>
 
-> **Development status:** KuroToon is actively being developed. Items marked planned or in progress are not guaranteed to exist in the current build. No APK should be described as device-tested until it has actually been installed and smoke-tested on a real Android device.
-
-[![License: Apache-2.0](https://img.shields.io/github/license/gtxnrg-ship-it/mihon?label=License&color=9461ff)](./LICENSE)
-[![Build](https://img.shields.io/github/actions/workflow/status/gtxnrg-ship-it/mihon/build.yml?label=Build)](./.github/workflows/build.yml)
+<p align="center">
+  <a href="https://github.com/gtxnrg-ship-it/mihon/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/gtxnrg-ship-it/mihon?display_name=tag&label=latest%20release&color=ff477e" /></a>
+  <a href="https://github.com/gtxnrg-ship-it/mihon/actions/workflows/build.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/gtxnrg-ship-it/mihon/build.yml?label=build&color=9461ff" /></a>
+  <a href="./LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/github/license/gtxnrg-ship-it/mihon?label=license" /></a>
+</p>
 
 ---
 
-## KuroToon at a glance
+## 💖 Welcome to KuroToon
 
-- **Android-first reader** with existing reading and library foundations preserved during development.
-- **Five main destinations:** Home, Browse, Shop, Library, and Me.
-- **Source choice:** users select third-party sources; KuroToon does not host reading content.
-- **Cosmic visual identity:** deep-space surfaces, purple and blue light, restrained rose highlights, and gold reward accents.
-- **Customization:** themes and cosmetics are planned as a distinct system, separate from core reading access.
-- **Release-based updates:** a version checker and user-approved Android installation flow are planned.
+KuroToon is an independent, Android-first manga reading project with a big ambition: make discovering, reading, and organizing stories feel personal, smooth, and a little magical. The long-term vision combines a polished reader, source choice, a thoughtful library, cosmic customization, and an easy way to get new versions.
 
-## Main sections
+**The live website is the prototype and showcase. The Android APK is the native app.** They are related parts of the same project, but a feature shown in the prototype is not automatically available in the Android app until it has been implemented and tested there.
 
-| Section | Intended experience | Status |
-|---|---|---|
-| **Home** | Continue reading, recent activity, featured/trending rows, and helpful first-run guidance. | Planned/in progress |
-| **Browse** | Search and discover titles across enabled sources, with sorting and genre/language filters where data supports them. | Planned/in progress |
-| **Shop** | Cosmetic items such as stickers, avatars, frames, banners, and themes. No pay-to-read mechanics. | Planned |
-| **Library** | Reading lists, categories, favourites, bookmarks, history, unread updates, and preserved reading progress. | Existing foundation; redesign planned |
-| **Me** | Profile, reading statistics, goals, achievements, customization, privacy, backups, and settings. | Planned/in progress |
+> [!IMPORTANT]
+> **Development status:** KuroToon is actively being built. The latest-release link below is the permanent place to check for a published APK. If no release has been published yet, the link may show that no release is available. We will not label an unbuilt or untested APK as a finished release.
 
-## Sources and repositories
+## 🚀 Get KuroToon
 
-Repository management belongs under **Me → Settings → Sources → Repositories**, not as a sixth bottom-navigation destination.
+### 📱 Android app (APK)
 
-The intended source experience includes:
-- Searchable and filterable repository catalogs, including named sources and categories such as manga, manhwa, manhua, webtoon, doujin, comics, and novels.
-- Language and category filters, source enable/disable controls, manual repository URL entry, and supported repository-page/deep-link installation.
-- Clear separation between repositories, installed extensions, and the actual sources used to browse titles.
-- Honest repository health, sync status, last-checked time, update availability, and useful error messages.
-- Deduplication and normalization across sources where reliable identifiers or metadata allow it, without hiding source provenance.
-- A constrained extension architecture. Adding a repository must not automatically execute arbitrary third-party code with unrestricted access to the app or device.
+**[➡️ Go to the latest KuroToon APK release](https://github.com/gtxnrg-ship-it/mihon/releases/latest)**
 
-MangaDex is intended to remain an independently controllable provider rather than being conflated with the extension catalog.
+When a release is published, open its assets and download the APK that matches your device. If you're unsure, choose the **universal APK** when one is provided. For most modern Android phones using 64-bit ARM, the `arm64-v8a` build is usually the right match.
 
-## Reader direction
+**No published APK yet?** You can check whether a fresh build artifact is available on the [Build & Test Actions page](https://github.com/gtxnrg-ship-it/mihon/actions/workflows/build.yml). Open the newest successful run on the main branch and look for its APK artifact. Actions artifacts are temporary build outputs for testing; they are not the same as a stable, published release and may require signing/installation checks.
 
-Core reading reliability comes first: page rendering, gestures, chapter navigation, progress, history, bookmarks, and backups must remain stable.
+**Install on Android**
+1. Download the APK to your phone.
+2. Open it from your Downloads folder.
+3. If Android asks, allow your browser or file manager to install unknown apps for this installation.
+4. Review the Android installer and confirm installation.
 
-Planned enhancements include:
-- Optional atmospheric audio and haptics with user controls.
-- Context-aware music discovery associated with a series or chapter, subject to source availability and applicable rights.
-- Optional AI-assisted dialogue dubbing with language and voice settings, clear network/privacy controls, and no interference with ordinary reading.
-- Broader series/season context navigation where supported by metadata.
-- Reader appearance and layout customization without sacrificing panel visibility or performance.
+Only install APKs from this repository's official release page or trusted project build runs. Android may block an update if it was signed with a different key from the version already installed. Back up important reading data before testing development builds.
 
-These are roadmap items, not promises that the current build already contains them.
+### 🌐 Website and prototype
 
-## Personalization and rewards
+**[✨ Open the live KuroToon prototype](https://kurotoon-hub.lovable.app/)**
 
-The Shop is intended for **cosmetics only** at first: themes, stickers, avatars, frames, and banners. A future reward/achievement system may recognize reading milestones and unlock cosmetic items. The UI must distinguish free, earned, and paid items honestly. No purchase flow, premium currency, inventory, or reward should be shown as operational until the backing system exists and has been tested.
+Explore the current web prototype on your phone or computer. It is the visual reference for KuroToon's design direction. Some screens and interactions may still be prototype-only while the native Android implementation catches up.
 
-Kuro-chan's approved original artwork is canonical. The official icon and character art must use those approved assets; they must not be replaced with invented or approximate mascot art.
+### 🧪 Development builds
 
-## Download an APK
+**[View recent builds on GitHub Actions](https://github.com/gtxnrg-ship-it/mihon/actions/workflows/build.yml)**
 
-There is **no verified, device-tested APK linked from this README yet**.
+Build artifacts are useful for trying work-in-progress changes. They can expire, may not be signed for long-term upgrades, and should not be mistaken for stable releases.
 
-When a successful GitHub Actions build is available:
-1. Open [GitHub Actions](https://github.com/gtxnrg-ship-it/mihon/actions).
-2. Select a successful **Build & Test** run for the commit you want.
-3. Download the APK artifact (currently configured for `arm64-v8a`) and extract the APK from the downloaded archive.
-4. Install it on your Android device. Android may ask you to allow installation from the app used to open the APK.
+---
 
-A green CI run is not the same as a real-device smoke test. Do not install artifacts from failed or untrusted runs. Public release downloads will be linked here once a release has actually been built and published.
+## 🔄 How updates will work
 
-## Updates
+We want updating KuroToon to be simple:
 
-The intended update experience is:
-1. KuroToon checks the official release feed for a newer compatible version.
-2. It shows the version number and release notes, then offers an **Update** action.
-3. The APK is downloaded and verified before Android's package installer is opened.
-4. Android handles any required installation confirmation; after installation, the user can reopen the updated app.
+1. A new version is built and checked.
+2. The project publishes the version and release notes on the [GitHub Releases page](https://github.com/gtxnrg-ship-it/mihon/releases).
+3. The **Latest APK Release** link at the top always points to the newest published release—no need to hunt through old versions.
+4. The native app's planned update experience will check for a newer compatible release, show the version and notes, and let you choose **Update**. Android will still handle the installation confirmation.
 
-Updates must keep the same application ID and signing identity and use increasing version codes. The app must never claim an update was installed before Android confirms it. Silent self-installation is not assumed.
+**Important:** The website and README links can point to the newest published release automatically. In-app automatic update checking is a separate native feature and must be implemented and tested before we claim it works. Updates also require a consistent application ID, version-code progression, and a stable signing key.
 
-## Build locally
+## 🌠 What KuroToon is aiming for
+
+- **Home:** continue reading, recent activity, and featured stories.
+- **Browse:** search, sort, and filter titles across enabled sources.
+- **Shop:** free-first cosmetics and personalization; no paid checkout in the current project.
+- **Library:** reading lists, bookmarks, favourites, history, and progress.
+- **Me:** profile, settings, appearance, source/repository management, privacy, and app information.
+- **Liquid interactions:** gentle water-like ripples and particle glints, with controls for intensity and reduced motion.
+- **Reader improvements:** reliable page navigation and progress first, with optional atmosphere and other enhancements as they become real features.
+
+These are goals and roadmap items—not a claim that every item is already implemented.
+
+## 🆓 Always free at this stage
+
+KuroToon is **fully free to use right now**. No current feature is intended to be locked behind a subscription or paywall. There is no active payment checkout, paid tier, or premium-only feature in the current plan. A possible future payment option is only a possibility, not a current offering.
+
+## 🔌 Sources and content
+
+KuroToon is a reader client; it does not host manga or promise that a particular third-party title will always be available. Users choose the sources they use. Source providers operate independently and may have their own terms, privacy practices, and content rights. Please use sources lawfully and respect the rights of creators and publishers.
+
+Repository management is intended to live under **Me → Settings → Sources → Repositories**, not as another main navigation tab. Installing a repository must not be treated as blanket endorsement of everything it provides.
+
+## 🛡️ Privacy, terms, and project documents
+
+- [Terms of Service (draft)](./docs/TERMS_OF_SERVICE.md)
+- [Privacy Notice (draft)](./docs/PRIVACY_NOTICE.md)
+- [Interaction design and Me-section direction](./docs/KUROTOON_INTERACTION_DESIGN.md)
+- [Product roadmap](./docs/KUROTOON_PRODUCT_ROADMAP.md)
+
+The legal documents are drafts and must be checked against the actual app behavior and reviewed before being treated as final legal terms.
+
+## 🧰 Build from source
 
 Use the Java version declared in `.github/.java-version` and the checked-in Gradle wrapper.
-
-The CI release command is:
 
 ```bash
 ./gradlew assembleRelease -Pdist=ci
 ```
 
-The configured CI workflow also runs formatting checks, unit tests, and SQLDelight migration verification. See [Build & Test workflow](./.github/workflows/build.yml).
+The [Build & Test workflow](./.github/workflows/build.yml) runs formatting checks, unit tests, SQLDelight migration verification, and an Android release build. CI success is not the same as testing the APK on a physical device.
 
-## Legal notices and open-source credits
+## 📜 Open-source credits
 
-KuroToon is an independent project and is not an official release of any upstream project. Portions of the codebase are derived from the **Mihon open-source project**. Applicable upstream copyright and attribution notices and the Apache License 2.0 are retained in this repository; see [LICENSE](./LICENSE). Third-party components may have separate terms. This credit is included for license compliance, not to present KuroToon as the upstream product.
+KuroToon is an independent project and is not an official release of any upstream project. Portions of the codebase are derived from the **Mihon open-source project**. Applicable upstream copyright and attribution notices and the Apache License 2.0 are retained in this repository; see [LICENSE](./LICENSE). Third-party components may have separate terms. This attribution is included for license compliance and does not imply that KuroToon is the upstream product.
 
-## Content disclaimer
+## 🤝 Contributing
 
-KuroToon does not host manga, comics, or other reading content. It does not claim affiliation with third-party content providers. Source availability and legality depend on the provider and the user's location; users are responsible for ensuring they have the rights to access content.
-
-## Contributing
-
-Please review [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](./CONTRIBUTING.md). Roadmap entries should only be marked complete after implementation and verification.
+Please review [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](./CONTRIBUTING.md). Roadmap items should only be marked complete after implementation and verification.
 
 ---
 
-**KuroToon — find your next world.** ✨
+<p align="center">
+  <strong>KuroToon — every season, every story. Always with Kuru. 💜</strong><br/>
+  <sub>Find your next world. Keep your reading yours.</sub>
+</p>
