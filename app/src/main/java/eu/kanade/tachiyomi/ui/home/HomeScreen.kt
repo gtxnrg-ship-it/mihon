@@ -64,10 +64,10 @@ object HomeScreen : Screen() {
     private const val TabNavigatorKey = "HomeTabs"
 
     private val TABS = listOf(
-        LibraryTab,
-        UpdatesTab,
-        HistoryTab,
+        KuroToonHomeTab,
         BrowseTab,
+        KuroToonShopTab,
+        LibraryTab,
         MoreTab,
     )
 
@@ -75,7 +75,7 @@ object HomeScreen : Screen() {
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
         TabNavigator(
-            tab = LibraryTab,
+            tab = KuroToonHomeTab,
             key = TabNavigatorKey,
         ) { tabNavigator ->
             // Provide usable navigator to content screen
@@ -129,8 +129,9 @@ object HomeScreen : Screen() {
             }
 
             val goToLibraryTab = { tabNavigator.current = LibraryTab }
+            val goToHomeTab = { tabNavigator.current = KuroToonHomeTab }
 
-            BackHandler(enabled = tabNavigator.current != LibraryTab, onBack = goToLibraryTab)
+            BackHandler(enabled = tabNavigator.current != KuroToonHomeTab, onBack = goToHomeTab)
 
             LaunchedEffect(Unit) {
                 launch {

@@ -36,8 +36,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import mihon.feature.support.SupportUsScreen
-import tachiyomi.i18n.MR
-import tachiyomi.presentation.core.i18n.stringResource
 
 data object MoreTab : Tab {
 
@@ -48,7 +46,7 @@ data object MoreTab : Tab {
             val image = AnimatedImageVector.animatedVectorResource(R.drawable.animated_more)
             return TabOptions(
                 index = 4u,
-                title = stringResource(MR.strings.label_more),
+                title = "Me",
                 icon = rememberAnimatedVectorPainter(image, isSelected),
             )
         }
