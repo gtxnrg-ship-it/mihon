@@ -130,7 +130,8 @@ data object KuroToonShopTab : Tab {
                 )
                 KuroToonHomeEmptyState(
                     title = "Cosmetics are not available yet",
-                    message = "Themes, avatars, frames, and stickers are planned. Nothing is for sale or locked behind a purchase in this preview.",
+                    message = "Themes, avatars, frames, and stickers are planned. " +
+                        "Nothing is for sale or locked behind a purchase in this preview.",
                 )
             }
         }
