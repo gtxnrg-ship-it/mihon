@@ -8,22 +8,31 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
 import cafe.adriel.voyager.navigator.tab.TabOptions
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import eu.kanade.presentation.home.KuroToonHomeEmptyState
 import eu.kanade.presentation.home.KuroToonHomeSectionHeader
 import eu.kanade.presentation.util.Tab
 import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.ui.browse.BrowseTab
 import eu.kanade.tachiyomi.ui.library.LibraryTab
+import eu.kanade.tachiyomi.ui.library.LibraryViewModel
+import eu.kanade.tachiyomi.ui.manga.MangaScreen
 
 data object KuroToonHomeTab : Tab {
     override val options: TabOptions
@@ -39,6 +48,10 @@ data object KuroToonHomeTab : Tab {
     @Composable
     override fun Content() {
         val tabNavigator = LocalTabNavigator.current
+        val navigator = LocalNavigator.currentOrThrow
+        val libraryViewModel = metroViewModel<LibraryViewModel>()
+        val libraryState by libraryViewModel.state.collectAsStateWithLifecycle()
+        val libraryItems = libraryState.libraryData.favorites.take(6)
         Scaffold { padding ->
             Column(
                 modifier = Modifier
@@ -74,16 +87,73 @@ data object KuroToonHomeTab : Tab {
 
                 KuroToonHomeSectionHeader(
                     title = "Your library",
-                    subtitle = "Series you have saved",
+                    subtitle = if (libraryState.isLoading) {
+                        "Loading your saved series"
+                    } else {
+                        "${libraryState.libraryData.favorites.size} saved series"
+                    },
                     actionLabel = "Open library",
                     onAction = { tabNavigator.current = LibraryTab },
                 )
-                KuroToonHomeEmptyState(
-                    title = "Build your library",
-                    message = "Save series from your available sources to keep them together here.",
-                    actionLabel = "Go to library",
-                    onAction = { tabNavigator.current = LibraryTab },
-                )
+                when {
+                    libraryState.isLoading -> {
+                        Text(
+                            text = "Loading your library…",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(horizontal = 4.dp, vertical = 12.dp),
+                        )
+                    }
+                    libraryItems.isEmpty() -> {
+                        KuroToonHomeEmptyState(
+                            title = "Build your library",
+                            message = "Save series from your available sources to keep them together here.",
+                            actionLabel = "Go to library",
+                            onAction = { tabNavigator.current = LibraryTab },
+                        )
+                    }
+                    else -> {
+                        libraryItems.forEach { item ->
+                            Card(
+                                onClick = {
+                                    navigator.push(MangaScreen(item.libraryManga.manga.id))
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = CardDefaults.cardColors(
+                                    containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                                ),
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                                ) {
+                                    Text(
+                                        text = item.libraryManga.manga.title,
+                                        style = MaterialTheme.typography.titleMedium,
+                                        color = MaterialTheme.colorScheme.onSurface,
+                                    )
+                                    Text(
+                                        text = when (item.unreadCount) {
+                                            0L -> item.sourceName
+                                            1L -> "1 unread chapter • ${item.sourceName}"
+                                            else -> "${item.unreadCount} unread chapters • ${item.sourceName}"
+                                        },
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    )
+                                }
+                            }
+                        }
+                        if (libraryState.libraryData.favorites.size > libraryItems.size) {
+                            Button(
+                                onClick = { tabNavigator.current = LibraryTab },
+                                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                            ) {
+                                Text("View all ${libraryState.libraryData.favorites.size} series")
+                            }
+                        }
+                    }
+                }
 
                 KuroToonHomeSectionHeader(
                     title = "Discover",
