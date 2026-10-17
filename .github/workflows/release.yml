@@ -72,7 +72,7 @@ jobs:
           TAG: ${{ steps.extract.outputs.tag }}
         run: |
           set -euo pipefail
-          mv app/build/outputs/apk/release/app-universal-release.apk "KuroToon-${TAG}.apk"
+          mv app/build/outputs/apk/release/app-universal-release.apk "Crochan.apk"
           mv app/build/outputs/apk/release/app-arm64-v8a-release.apk "KuroToon-arm64-v8a-${TAG}.apk"
           mv app/build/outputs/apk/release/app-armeabi-v7a-release.apk "KuroToon-armeabi-v7a-${TAG}.apk"
           mv app/build/outputs/apk/release/app-x86-release.apk "KuroToon-x86-${TAG}.apk"
@@ -84,7 +84,7 @@ jobs:
           name: KuroToon-${{ steps.extract.outputs.tag }}
           if-no-files-found: error
           path: |
-            KuroToon-${{ steps.extract.outputs.tag }}.apk
+            Crochan.apk
             KuroToon-arm64-v8a-${{ steps.extract.outputs.tag }}.apk
             KuroToon-armeabi-v7a-${{ steps.extract.outputs.tag }}.apk
             KuroToon-x86-${{ steps.extract.outputs.tag }}.apk
@@ -104,7 +104,7 @@ jobs:
             Your manga universe. Your way. 💜
 
             ### Downloads
-            - **Universal APK** — recommended if you're unsure which file fits your device.
+            - **Crochan.apk (universal APK)** — direct download; recommended if you're unsure which file fits your device.
             - **arm64-v8a APK** — most modern 64-bit Android phones.
             - **armeabi-v7a APK** — older 32-bit ARM devices.
             - **x86 / x86_64 APKs** — mainly for compatible emulators.
@@ -113,7 +113,7 @@ jobs:
 
             KuroToon is currently free; this release does not introduce paid tiers or a paywall.
           files: |
-            KuroToon-${{ steps.extract.outputs.tag }}.apk
+            Crochan.apk
             KuroToon-arm64-v8a-${{ steps.extract.outputs.tag }}.apk
             KuroToon-armeabi-v7a-${{ steps.extract.outputs.tag }}.apk
             KuroToon-x86-${{ steps.extract.outputs.tag }}.apk
