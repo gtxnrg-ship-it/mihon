@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/gtxnrg-ship-it/mihon/releases/latest"><strong>📦 Download KuroToon APK</strong></a>
+  <a href="https://github.com/gtxnrg-ship-it/mihon/releases/latest/download/Crochan.apk"><strong>📦 Download Crochan APK</strong></a>
   ·
   <a href="https://github.com/gtxnrg-ship-it/mihon/actions/workflows/build.yml"><strong>🛠️ Build Status & Test APKs</strong></a>
   ·
@@ -32,15 +32,11 @@ KuroToon is an independent, Android-first manga reader with a big ambition: make
 
 ### 📦 Latest official APK
 
-**[✨ Download the latest published KuroToon APK](https://github.com/gtxnrg-ship-it/mihon/releases/latest)**
+**[✨ Download Crochan.apk directly](https://github.com/gtxnrg-ship-it/mihon/releases/latest/download/Crochan.apk)**
 
-This permanent link points to the latest **published** GitHub release. Once a new version is published, the same link takes you to that version—no need to search through old tags.
+This link is configured to download the universal APK directly, without opening the release page first. It will work once the first non-draft, published release containing `Crochan.apk` is available. At present, the repository has no published APK asset, so we must not present the download as live yet.
 
-When a release is available:
-1. Open the latest release and read its version notes.
-2. Download the universal APK if one is provided and you're unsure which variant fits your phone. Otherwise, most modern 64-bit Android phones use the `arm64-v8a` APK.
-3. Open the downloaded APK on your phone.
-4. If Android asks, allow your browser or file manager to install apps from that source, then confirm installation.
+When the APK is available, tap the link, open the downloaded `Crochan.apk`, and confirm Android's installation prompt if shown.
 
 Only install APKs from this repository's official Releases page. Android requires an update to be signed with the same signing key as the installed version. Back up important reading data before testing development builds.
 
